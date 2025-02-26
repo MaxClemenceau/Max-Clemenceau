@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription Newsletter</title>
-    <!-- Intégration du script Klaviyo -->
-    <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VUwha5"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription Newsletter</title>
+  <!-- Intégration du script Klaviyo -->
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VUwha5"></script>
+  <style>
+    /* Réinitialisation de base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    /* Écran de chargement */
+    #loading-screen {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      z-index: 9999;
+    }
+    
+    #loading-screen h1 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+    
+    /* Contenu de la page (masqué au départ) */
+    #newsletter-content {
+      display: none;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Écran de chargement -->
+  <div id="loading-screen">
+    <h1>Chargement en cours, merci de patienter...</h1>
+  </div>
+
+  <!-- Contenu principal de la page (initialement masqué) -->
+  <div id="newsletter-content">
     <h1>Bienvenue sur ma page d'inscription à la newsletter</h1>
     <!-- Votre contenu d'inscription ici -->
+  </div>
+
+  <script>
+    // Une fois que tout est chargé (y compris les scripts et les images),
+    // on masque l'écran de chargement et on affiche le contenu principal.
+    window.addEventListener('load', function() {
+      document.getElementById('loading-screen').style.display = 'none';
+      document.getElementById('newsletter-content').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
+
